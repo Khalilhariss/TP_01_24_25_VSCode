@@ -1,26 +1,34 @@
 #include <iostream>
 using namespace std;
 
+ int takeInteger(int intInf, int intSup)
+    {
+        int n;
+        bool bornSup;
+        bool bornInf;
+        do{
+              cout<<"Enter an integer greater than "<< intInf <<"and less than " << intSup;
+              cin>>n;
+              bornSup=n>=70;
+              bornInf=n<=0;
+              if(bornInf)
+              {
+                cout<<"Your number is less than or equal to"<< intInf <<endl;
+              }
+              if(bornSup)
+              {
+                cout<<"Your number is greater than or equal to"<< intSup <<endl;
+              }
+        }while (bornInf || bornSup);
+        return n;
+     }
 int main()
 {
     int n;
-    bool bornSup;
-    bool bornInf;
-    do{
-    cout<<"Enter a positive positive integer and less than 70:";
-    cin>>n;
-    bornInf=n<=0;
-    bornSup=n>=70;
-    if(bornInf)
-    {
-        cout<<"Your number is less  or equal to 0!"<<endl;
-    }
-    if(bornSup)
-    {
-        cout<<"Your number is greater than or equal to 70!"<<endl;
-    }
-    }while(bornInf|| bornSup);
-    for(int i=10; i>=0; --i)
+    n=takeInteger(0,70);
+    int bornSupTable=takeInteger(8,30);
+    int bornInfTable=takeInteger(0,8);
+    for(int i=bornSupTable; i>=bornInfTable; --i)
     {
         cout<<n<<"x"<<i<<"="<<n*i<<endl;
     }
