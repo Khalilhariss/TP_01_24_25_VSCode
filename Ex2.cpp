@@ -7,7 +7,7 @@ int main()
     do{
     cout<<"Enter a positive positive integer:";
     cin>>n;
-    }while(n<=0);
+    }while(n<=0 || n>=70);
     for(int i=10; i>=0; --i)
     {
         cout<<n<<"x"<<i<<"="<<n*i<<endl;
